@@ -10,7 +10,7 @@ public class HomePageTest extends BasePage {
     @Test
     public void searchGoogle() {
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-        homePage.setGoogleTextbox("Test Automation");
-        homePage.searchClick();
+        homePage.setGoogleSearchbox("Test Automation");
+        homePage.btnClick();
     }
 }

@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,14 +18,15 @@ public class HomePage {
     @FindBy(name = "q")
     private WebElement searchGoogle;
 
-    @FindBy(xpath = "//div[@class='FPdoLc tfB0Bf']//input[@name='btnK']")
-    private WebElement searchClick;
+    @FindBy(name = "btnK")
+    private WebElement btnClick;
 
-    public void setGoogleTextbox(String searchTextbox) {
+    public void setGoogleSearchbox(String searchTextbox) {
         searchGoogle.sendKeys(searchTextbox);
+        searchGoogle.sendKeys(Keys.RETURN);
     }
 
-    public void searchClick() {
-        searchClick.click();
+    public void btnClick() {
+        btnClick.click();
     }
 }
